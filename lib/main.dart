@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:trip_ledger/pages/ledger_photo/ledger_photo_preview.dart';
+import 'package:trip_ledger/pages/ledger_record/ledger_record_binding.dart';
+import 'package:trip_ledger/pages/ledger_record/ledger_record_view.dart';
 import 'db/ledger_db.dart';
 import '../pages/ledger_tab/ledger_tab_binding.dart';
 import '../pages/ledger_tab/ledger_tab_view.dart';
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: TripRecord,
-          initialRoute: '/tab',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: primaryColor,
@@ -66,6 +69,14 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> TripRecord = [
   GetPage(
+    name: '/',
+    page: () => const LedgerRecordView(),
+    binding: LedgerRecordBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
     name: '/tab',
     page: () => const LedgerTabView(),
     binding: LedgerTabBinding(),
@@ -93,6 +104,13 @@ List<GetPage<dynamic>> TripRecord = [
     name: '/photo/view',
     page: () => const LedgerPhotoView(),
     binding: LedgerPhotoBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
+    name: '/photo/preview',
+    page: () => const LedgerPhotoPreview(),
     transition: Transition.cupertino,
     popGesture: true,
     preventDuplicates: false,
