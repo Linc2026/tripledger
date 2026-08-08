@@ -24,7 +24,7 @@ class LedgerPhotoPreview extends GetView<LedgerRecordLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ybuswik.value)),
+              url: WebUri.uri(Uri.parse(controller.ifwc.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

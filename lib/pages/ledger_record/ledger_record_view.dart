@@ -11,7 +11,7 @@ class LedgerRecordView extends GetView<LedgerRecordLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.lyjfiowr.value
+          () => controller.raqe.value
               ? const CircularProgressIndicator(color: Colors.black)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class LedgerRecordView extends GetView<LedgerRecordLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.gqjmpocu();
+              controller.kuhpfwj();
             },
             icon: const Icon(
               Icons.restart_alt,
